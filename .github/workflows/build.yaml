@@ -4,6 +4,7 @@ env:
   REGION: us-east-1
   AWS_ACCOUNT: 504807027420
   APPLICATION: insights
+  ENV: dev
 
 on:
   push:
@@ -43,7 +44,7 @@ jobs:
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1-node16
         with:
-          role-to-assume: arn:aws:iam::${{env.AWS_ACCOUNT}}:role/${{env.APPLICATION}}-${{env.ENV}}-GitHubActions-role
+          role-to-assume: arn:aws:iam::${{env.AWS_ACCOUNT}}:role/github-actions-role
           aws-region: ${{env.REGION}}
 
       - name: Login to Amazon ECR
