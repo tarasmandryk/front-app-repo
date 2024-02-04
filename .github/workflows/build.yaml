@@ -78,7 +78,7 @@ jobs:
         with:
           repository: ${{ github.repository_owner }}/k8s-manifest-repo
           ref: main
-          token: \${{ secrets.ACTION_TOKEN }}
+          token: ${{ secrets.ACTION_TOKEN }}
           path: k8s-manifest-repo
   
       - name: Update Kubernetes resources
